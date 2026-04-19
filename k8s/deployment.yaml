@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: aksha-web
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aksha-web
+  namespace: aksha-web
+  labels:
+    app: aksha-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: aksha-web
+  template:
+    metadata:
+      labels:
+        app: aksha-web
+    spec:
+      containers:
+        - name: web
+          image: asia-south1-docker.pkg.dev/aksha-platform-prod/aksha-apps/aksha-web:v1.0
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: aksha-web
+  namespace: aksha-web
+spec:
+  selector:
+    app: aksha-web
+  ports:
+    - port: 80
+      targetPort: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: Gateway
+metadata:
+  name: aksha-gateway
+  namespace: aksha-web
+  annotations:
+    networking.gke.io/certmap: aksha-cert-map
+spec:
+  gatewayClassName: gke-l7-global-external-managed
+  listeners:
+    - name: https
+      protocol: HTTPS
+      port: 443
+    - name: http
+      protocol: HTTP
+      port: 80
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: aksha-routes
+  namespace: aksha-web
+spec:
+  parentRefs:
+    - name: aksha-gateway
+  rules:
+    - backendRefs:
+        - name: aksha-web
+          port: 80
