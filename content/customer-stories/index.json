@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "description": "Manifest of published customer stories. Append new entries when publishing. Keep in descending date order.",
+  "stories": [
+    {
+      "slug": "npcws",
+      "folder": "2026-04-npcws",
+      "title": "First Light — NPCWS Welfare Society",
+      "client": "Nagarampalem Police Children Welfare Society",
+      "date_published": "2026-04-20",
+      "status": "draft",
+      "featured": true,
+      "summary": "A solo founder and an AI pair shipped a production-grade member portal for a 20-year-old welfare society in two weeks, then scoped Phase 2 with a compliance-grade Aadhaar research report.",
+      "tags": ["welfare", "non-profit", "gcp", "gke", "react", "aadhaar", "digilocker", "andhra-pradesh"]
+    }
+  ]
+}

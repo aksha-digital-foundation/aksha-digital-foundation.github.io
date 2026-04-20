@@ -1,0 +1,36 @@
+# Structured facts for site filters, search, and partner reporting.
+# Keep in sync with the frontmatter in index.md.
+
+client:
+  name: ""
+  short_name: ""
+  industry: ""
+  location: ""
+  size: ""                    # e.g. "~500 members", "10 staff"
+  founded: ""                 # year, optional
+
+engagement:
+  started: 2026-01-01
+  phase_1_live: 2026-01-01
+  current_phase: "Phase 1"
+  status: "live"              # live | paused | completed | archived
+
+tech_stack:
+  frontend: []                # e.g. ["React 19", "Vite", "react-router-dom"]
+  backend: []                 # e.g. ["Express 4", "Node 22"]
+  database: []                # e.g. ["PostgreSQL 15"]
+  infra: []                   # e.g. ["GKE Autopilot", "Cloud SQL", "asia-south1"]
+  integrations: []            # e.g. ["Razorpay", "MSG91", "DigiLocker"]
+
+outcomes:
+  - metric: "Time to Phase 1"
+    value: ""                 # e.g. "14 days from first commit to production"
+  - metric: "Cost vs industry baseline"
+    value: ""                 # e.g. "~10% of a typical agency quote"
+
+links:
+  live_url: ""
+  github: ""                  # optional, only if public
+  case_study_pdf: ""          # optional
+
+tags: []

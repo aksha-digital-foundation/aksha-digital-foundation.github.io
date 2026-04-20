@@ -1,0 +1,66 @@
+client:
+  name: "Nagarampalem Police Children Welfare Society"
+  short_name: "NPCWS"
+  industry: "Welfare Society / Non-profit"
+  location: "Guntur, Andhra Pradesh"
+  size: "~500 member families"
+  founded: 2004
+
+engagement:
+  started: 2026-04-11
+  phase_1_live: 2026-04-19
+  current_phase: "Phase 1 delivered; Phase 2 scoped"
+  status: "live"
+
+tech_stack:
+  frontend:
+    - "React 19"
+    - "Vite"
+    - "react-router-dom v7"
+    - "lucide-react"
+    - "Pure CSS with CSS variables"
+  backend:
+    - "Express 4"
+    - "Node 22"
+  database:
+    - "PostgreSQL 15"
+  infra:
+    - "Docker"
+    - "Kubernetes (GKE Autopilot)"
+    - "Cloud SQL (PostgreSQL)"
+    - "Google-managed TLS (Gateway API)"
+    - "asia-south1 (Mumbai)"
+    - "GitHub Actions"
+    - "Artifact Registry"
+    - "Workload Identity Federation"
+  integrations_planned:
+    - "Razorpay (payments)"
+    - "MSG91 (SMS)"
+    - "DigiLocker / Meri Pehchaan (identity)"
+
+outcomes:
+  - metric: "Time to Phase 1 in production"
+    value: "~14 days of active solo work, first commit to live pageview"
+  - metric: "Client sign-off deliverables"
+    value: "8 Word review documents (one per page + Login/Auth), tick-box format"
+  - metric: "Compliance research"
+    value: "20-page Aadhaar integration + DPDP baseline with 40+ sources"
+  - metric: "Cost versus industry baseline"
+    value: "A conventional agency quote for equivalent scope would have been ₹5–15 lakh over 3+ months"
+
+links:
+  live_url: "https://npcws.aksha-digital-foundation.com"
+  github: "https://github.com/aksha-digital-foundation/npcws-welfare-society"
+  case_study_pdf: ""
+
+tags:
+  - "welfare"
+  - "non-profit"
+  - "gcp"
+  - "gke"
+  - "react"
+  - "postgresql"
+  - "aadhaar"
+  - "digilocker"
+  - "andhra-pradesh"
+  - "b2b"
